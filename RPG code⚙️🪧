@@ -1,5 +1,5 @@
 #k3nny
-09/04/24
+#09/04/24
 
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
@@ -12,9 +12,11 @@ import string
 
 class PasswordGenerator(BoxLayout):
     def generate_password(self, *args):
+#randomly selects letters from the alphabets and numbers in a range of 6
         characters = string.ascii_letters + string.digits
         self.password = ''.join(random.choice(characters) for i in range(6))
         self.password_label.text = "Generating password..."
+#create a time-gap when printing so that it looks more realistic
         Clock.schedule_once(self.display_password, 1.5)
 
     def display_password(self, dt):
@@ -33,12 +35,14 @@ class PasswordGenerator(BoxLayout):
         self.orientation = 'vertical'
         self.spacing = 20
 
-        self.welcome_label = Label(text="Welcome to the Random Password Generator!", font_size=24)
+#creating a welcome message
+       self.welcome_label = Label(text="Welcome to the Random Password Generator!", font_size=24)
         self.add_widget(self.welcome_label)
 
         self.password_label = Label(text="", font_size=36)
         self.add_widget(self.password_label)
 
+#customizing the button
         self.generate_button = Button(text="Generate", on_press=self.generate_password, size_hint=(None, None), size=(700, 200))
         self.add_widget(self.generate_button)
 
