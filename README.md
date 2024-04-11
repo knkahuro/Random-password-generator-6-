@@ -20,7 +20,7 @@ This is a simple Kivy application that generates a random 6-character alphanumer
 1. Install Python 3.x on your system
 2. Install Kivy 2.3.0 or higher
 
-##Usage
+## Usage
 
 1. When the application starts, you will see a welcome message, a password display area, and a "Generate" button.
 2. Click the "Generate" button to generate a new random password.
